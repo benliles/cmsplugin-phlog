@@ -18,7 +18,6 @@ setup(
         #"Development Status :: 4 - Beta",
         #"Development Status :: 5 - Production/Stable",
         "Programming Language :: Python",
-        "Framework :: Django",
         "Topic :: Multimedia :: Graphics",
         "Topic :: Software Development :: Libraries :: Python Modules",
         "License :: OSI Approved :: Apache Software License"],
