@@ -4,14 +4,14 @@ from setuptools import setup, find_packages
 
 
 
-version = '0.1'
+version = '0.2dev'
 
 setup(
     name = 'cmsplugin-phlog',
     version = version,
     description = "Django CMS Plugin for Photologue galleries",
-    long_description = open(join(dirname(__file__), 'README')).read() + "\n" + 
-                       open(join(dirname(__file__), 'HISTORY')).read(),
+    long_description = open(join(dirname(__file__), 'README.rst')).read() + "\n" + 
+                       open(join(dirname(__file__), 'HISTORY.rst')).read(),
     classifiers = [
         "Framework :: Django",
         "Development Status :: 3 - Alpha",
