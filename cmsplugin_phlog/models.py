@@ -6,7 +6,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from cms.models import CMSPlugin
 
-from photologue.models import Gallery, Photo
+from photologue.models import Gallery, Photo, ImageModel
 from photologue.models import TagField, tagfield_help_text, LATEST_LIMIT
 
 
@@ -113,4 +113,28 @@ class PhlogGalleryPlugin(CMSPlugin):
     
     def copy_relations(self, oldinstance):
         self.gallery = oldinstance.gallery
+
+class PhlogPhoto(ImageModel):
+    title = models.CharField(_('title'), max_length=255)
+    caption = models.TextField(_('caption'), blank=True, null=True)
+    plugin = models.ForeignKey(CMSPlugin, related_name='photos')
+    
+    class Meta:
+        db_table = 'phlog_photo'
+    
+    def __unicode__(self):
+        return self.title
+
+class PhlogPhotoPlugin(CMSPlugin):
+    class Meta:
+        db_table = 'cmsplugin_phlog_phlog_photo'
+    
+    def __unicode__(self):
+        return self.photos.all()[0].title
+    
+    @property
+    def render_template(self):
+        return select_template([
+            'cms/plugins/phlog/%s-photo.html' % (self.placeholder.slot.lower(),),
+            'cms/plugins/phlog/photo.html'])
 
