@@ -1,0 +1,10 @@
+{% for subplugin in plugin_list %}
+<li id="plugin_{{ subplugin.pk }}" class="{{ subplugin.plugin_type }}">
+	<span class="drag"></span>
+	<span class="text">
+		{{ subplugin.get_plugin_name }}
+		{% if subplugin.get_short_description %} [ {{ subplugin.get_short_description }} ]{% endif %}
+	</span>
+	<span class="delete"></span>
+</li>
+{% endfor %}

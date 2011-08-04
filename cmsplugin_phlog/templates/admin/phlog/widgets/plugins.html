@@ -1,0 +1,24 @@
+{% load i18n %}
+{% if not add %}
+<div class="nested-plugins plugin-list-holder" id="plugin-{{ plugin.pk }}" data-id="{{ plugin.pk }}">
+	<ul class="plugin-list" id="plugin-plugins-list-{{ plugin.pk }}">
+		{% include "admin/phlog/widgets/plugin_item.html" %}
+	</ul>
+	{% include "admin/phlog/widgets/installed_plugins_inc.html" %}
+	<div class="nested-plugins-error"></div>
+</div>
+{% endif %}
+<div class="plugin-editor">
+	{% if add %}
+		<p>{% blocktrans %}You must save the page first to add plugins.{% endblocktrans %}</p>
+	{% else %}
+		{% if plugin_list %}
+			<p>{% blocktrans %}No Plugin selected. Select one above{% endblocktrans %}</p>
+		{% else %}
+			<p>{% blocktrans %}No Plugins present. Add a plugin to this plugin.{% endblocktrans %}</p>
+		{% endif %}
+	{% endif %}
+</div>
+<script type="text/javascript">
+	jQuery("#plugin-{{ plugin.pk }}").data("id", {{ plugin.pk }});
+</script>

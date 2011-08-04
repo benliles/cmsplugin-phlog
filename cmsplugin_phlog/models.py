@@ -138,3 +138,19 @@ class PhlogPhotoPlugin(CMSPlugin):
             'cms/plugins/phlog/%s-photo.html' % (self.placeholder.slot.lower(),),
             'cms/plugins/phlog/photo.html'])
 
+class GalleryPlugin(CMSPlugin):
+    template = models.CharField(max_length=255, blank=True,
+                                help_text=u'Enter a template to use instead of '
+                                u'the standard templates')
+    
+    class Meta:
+        db_table = 'cmsplugin_phlog_phlog_gallery'
+    
+    @property
+    def render_template(self):
+        if self.template:
+            return self.template
+        
+        return select_template([
+            'cms/plugins/phlog/%s-gallery.html' % (self.placeholder.slot.lower(),),
+            'cms/plugins/phlog/gallery.html'])
