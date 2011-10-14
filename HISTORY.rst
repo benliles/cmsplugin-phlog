@@ -1,3 +1,8 @@
+0.2.1 (2011/10/14)
+------------------
+
+* Fixed a bug with the rendered order of Phlog Galleries
+
 0.2 (2011/08/04)
 ----------------
 

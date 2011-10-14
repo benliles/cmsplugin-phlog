@@ -81,15 +81,13 @@ class PhlogGalleryPlugin(CMSPluginBase):
             'gallery': instance})
         
         context.update({
-            'plugins': render_plugins(instance.cmsplugin_set.filter(parent=instance),
+            'plugins': render_plugins(instance.cmsplugin_set.filter(parent=instance).order_by('position'),
                                       context, placeholder)
         })
         
         return context
     
     def render_change_form(self, request, context, add=False, change=False, form_url='', obj=None):
-        print str(self.__dict__)
-        
         plugin = getattr(self, 'cms_plugin_instance', None)
         
         if plugin:
