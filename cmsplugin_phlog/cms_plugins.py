@@ -55,8 +55,13 @@ class PhlogPhotoPlugin(CMSPluginBase):
     text_enabled = True
     
     def render(self, context, instance, placeholder):
+        try:
+            photo = instance.photos.all()[0]
+        except:
+            photo = None
+        
         context.update({
-            'photo': instance.photos.all()[0],
+            'photo': photo,
             'instance': instance})
         return context
     

@@ -1,3 +1,8 @@
+0.2.2 (2011/12/01)
+------------------
+
+* Fixed a bug when a phlog photo plugin is added without a photo
+
 0.2.1 (2011/10/14)
 ------------------
 

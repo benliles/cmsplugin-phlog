@@ -130,7 +130,10 @@ class PhlogPhotoPlugin(CMSPlugin):
         db_table = 'cmsplugin_phlog_phlog_photo'
     
     def __unicode__(self):
-        return self.photos.all()[0].title
+        try:
+            return self.photos.all()[0].title
+        except:
+            return 'PhlogPhotoPlugin #%d' % (self.pk,)
     
     @property
     def render_template(self):
