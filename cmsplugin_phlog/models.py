@@ -142,6 +142,8 @@ class GalleryPlugin(CMSPlugin):
     template = models.CharField(max_length=255, blank=True,
                                 help_text=u'Enter a template to use instead of '
                                 u'the standard templates')
+    width = models.PositiveIntegerField(null=True, blank=True)
+    height = models.PositiveIntegerField(null=True, blank=True)
     
     class Meta:
         db_table = 'cmsplugin_phlog_phlog_gallery'

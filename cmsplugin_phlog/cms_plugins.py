@@ -78,7 +78,9 @@ class PhlogGalleryPlugin(CMSPluginBase):
                 
         context.update({
             'placeholder': placeholder,
-            'gallery': instance})
+            'gallery': instance,
+            'width' : instance.width,
+            'height' : instance.height})
         
         context.update({
             'plugins': render_plugins(instance.cmsplugin_set.filter(parent=instance).order_by('position'),

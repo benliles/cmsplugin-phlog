@@ -1,0 +1,13 @@
+<ul>
+{% if image_list %}
+{% for image in image_list %}
+	<li><img src="{{ image.get_thumbnail_url }}" /></li>
+{% endfor %}
+{% else %}
+{% if plugins %}
+{% for plugin in plugins %}
+	<li>{{ plugin }}</li>
+{% endfor %}
+{% endif %}
+{% endif %}
+</ul>
