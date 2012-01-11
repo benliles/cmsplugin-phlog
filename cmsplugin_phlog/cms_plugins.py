@@ -75,12 +75,9 @@ class PhlogGalleryPlugin(CMSPluginBase):
     # Need to create a form for the plugin to add a widget for child plugins
     
     def render(self, context, instance, placeholder):
-                
         context.update({
             'placeholder': placeholder,
-            'gallery': instance,
-            'width' : instance.width,
-            'height' : instance.height})
+            'gallery': instance})
         
         context.update({
             'plugins': render_plugins(instance.cmsplugin_set.filter(parent=instance).order_by('position'),
