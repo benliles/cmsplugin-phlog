@@ -1,3 +1,8 @@
+0.2.3 (2012/01/11)
+------------------
+
+* Added width and height attributes to Phlog Galleries
+
 0.2.2 (2011/12/01)
 ------------------
 

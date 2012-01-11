@@ -80,7 +80,6 @@ class PhlogGalleryPlugin(CMSPluginBase):
     # Need to create a form for the plugin to add a widget for child plugins
     
     def render(self, context, instance, placeholder):
-                
         context.update({
             'placeholder': placeholder,
             'gallery': instance})
