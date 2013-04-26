@@ -13,9 +13,9 @@ from cms.plugin_pool import plugin_pool
 
 
 _base_js = list(os.path.join(settings.CMS_MEDIA_URL, path) for path in (
-                'js/lib/ui.core.js',
-                'js/lib/ui.dialog.js',
-                'js/lib/ui.sortable.js'))
+                'js/libs/jquery.ui.core.js',
+                'js/libs/jquery.ui.dialog.js',
+                'js/libs/jquery.ui.sortable.js'))
 _base_css = list(os.path.join(settings.CMS_MEDIA_URL, path) for path in (
                 'css/jquery/cupertino/jquery-ui.css',))
 
