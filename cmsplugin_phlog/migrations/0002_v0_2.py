@@ -106,7 +106,7 @@ class Migration(SchemaMigration):
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'is_public': ('django.db.models.fields.BooleanField', [], {'default': 'True'}),
             'photos': ('django.db.models.fields.related.ManyToManyField', [], {'related_name': "'ordered_galleries'", 'to': "orm['photologue.Photo']", 'through': "orm['photologue.PhotoOrdering']", 'blank': 'True', 'symmetrical': 'False', 'null': 'True'}),
-            'tags': ('tagging.fields.TagField', [], {}),
+            'tags': ('photologue.models.TagField', [], {}),
             'title': ('django.db.models.fields.CharField', [], {'unique': 'True', 'max_length': '100'}),
             'title_slug': ('django.db.models.fields.SlugField', [], {'unique': 'True', 'max_length': '50', 'db_index': 'True'})
         },
@@ -120,7 +120,7 @@ class Migration(SchemaMigration):
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'image': ('django.db.models.fields.files.ImageField', [], {'max_length': '100'}),
             'is_public': ('django.db.models.fields.BooleanField', [], {'default': 'True'}),
-            'tags': ('tagging.fields.TagField', [], {}),
+            'tags': ('photologue.models.TagField', [], {}),
             'title': ('django.db.models.fields.CharField', [], {'unique': 'True', 'max_length': '100'}),
             'title_slug': ('django.db.models.fields.SlugField', [], {'unique': 'True', 'max_length': '50', 'db_index': 'True'}),
             'view_count': ('django.db.models.fields.PositiveIntegerField', [], {'default': '0'})
