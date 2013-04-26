@@ -52,15 +52,15 @@ class OrderedGallery(models.Model):
         else:
             return self.photos.all()[:limit]
 
-    def sample(self, count=0, public=True):
-        if count == 0 or count > self.photo_count():
-            count = self.photo_count()
+    def sample(self, limit=0, public=True):
+        if limit == 0 or limit > self.photo_count():
+            limit = self.photo_count()
         if public:
             photo_set = self.public()
         else:
             photo_set = self.photos.all()
-        return random.sample(photo_set, count)
-    
+        return random.sample(photo_set, limit)
+
     def in_order(self, limit=None, public=True):
         photos = self.photos.order_by('photoordering__order')
         if public:
